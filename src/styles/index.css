@@ -1,11 +1,89 @@
-/* 
+body {
+  background-color: #fff8dc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+.todo-container {
+  width: 400px;
+  background: white;
+  padding: 20px 30px;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  position: relative;
+  font-size: 16px;
+  line-height: 1.5;
+  
 
-*/
+  background-image:
+    linear-gradient(to bottom, transparent 23px, #b0c4de 24px, transparent 25px);
+  background-size: 100% 25px;
+  
+
+  border-left: 4px solid #e63946;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #1d3557;
+  user-select: none;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #1d3557;
+  outline: none;
+  margin-bottom: 20px;
+  background: transparent;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px;
+  font-family: 'Courier New', Courier, monospace;
+  border-bottom: 1px solid #b0c4de;
+  position: relative;
+}
+
+.task-item:hover {
+  background-color: #f0f8ff;
+}
+
+.delete {
+  color: #e63946;
+  font-weight: bold;
+  cursor: pointer;
+  display: none;
+  font-size: 18px;
+}
+
+.task-item:hover .delete {
+  display: inline;
+}
+
+.empty {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin-top: 40px;
+}
