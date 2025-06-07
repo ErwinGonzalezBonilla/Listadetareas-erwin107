@@ -1,89 +1,100 @@
-body {
-  background-color: #fff8dc;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  justify-content: center;
-  padding: 40px 0;
+.todoContainer {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fffdfa;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-family: 'Patrick Hand', cursive; /* Fuente estilo manuscrito */
+  position: relative;
+  border-radius: 8px;
 }
 
-.todo-container {
-  width: 400px;
-  background: white;
-  padding: 20px 30px;
-  border: 1px solid #ddd;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-  position: relative;
-  font-size: 16px;
-  line-height: 1.5;
-  
-
-  background-image:
-    linear-gradient(to bottom, transparent 23px, #b0c4de 24px, transparent 25px);
-  background-size: 100% 25px;
-  
-
-  border-left: 4px solid #e63946;
+/* Líneas tipo cuaderno (fondo rayado) */
+.todoContainer::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  bottom: 2rem;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 22px,
+    #cbd5e1 23px
+  );
+  opacity: 0.2;
+  pointer-events: none;
+  z-index: 0;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
-  font-family: 'Courier New', Courier, monospace;
-  color: #1d3557;
-  user-select: none;
+  margin-bottom: 1.5rem;
+  color: #344055;
 }
 
-input {
+/* Input estilo lápiz */
+input[type="text"] {
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
+  padding: 10px 15px;
+  font-size: 1.1rem;
   border: none;
-  border-bottom: 2px solid #1d3557;
+  border-bottom: 2px solid #344055;
   outline: none;
-  margin-bottom: 20px;
+  font-family: 'Patrick Hand', cursive;
   background: transparent;
-  font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 1.5rem;
 }
 
-input::placeholder {
-  color: #999;
+input[type="text"]::placeholder {
+  color: #9ca3af;
 }
 
-ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.task-item {
+/* Tarea */
+.taskItem {
+  background: transparent;
+  font-size: 1.1rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #cbd5e1;
+  color: #344055;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 8px;
-  font-family: 'Courier New', Courier, monospace;
-  border-bottom: 1px solid #b0c4de;
   position: relative;
+  z-index: 1;
 }
 
-.task-item:hover {
-  background-color: #f0f8ff;
+.taskItem::before {
+  content: "•";
+  color: #f97316;
+  margin-right: 10px;
 }
 
-.delete {
-  color: #e63946;
-  font-weight: bold;
+.deleteBtn {
   cursor: pointer;
-  display: none;
-  font-size: 18px;
+  color: #ef4444;
+  font-weight: bold;
+  margin-left: 10px;
+  user-select: none;
+  transition: color 0.2s ease;
 }
 
-.task-item:hover .delete {
-  display: inline;
+.deleteBtn:hover {
+  color: #b91c1c;
 }
 
-.empty {
-  text-align: center;
-  color: #888;
+.noTask {
   font-style: italic;
-  margin-top: 40px;
+  color: #6b7280;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer {
+  margin-top: 1.5rem;
+  text-align: right;
+  font-weight: 600;
+  color: #344055;
 }
